@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+    <title>Login</title>
+    <!-- Simple bar CSS -->
+    <link rel="stylesheet" href="css/simplebar.css">
+    <!-- Fonts CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- Icons CSS -->
+    <link rel="stylesheet" href="css/feather.css">
+    <!-- Date Range Picker CSS -->
+    <link rel="stylesheet" href="css/daterangepicker.css">
+    <!-- App CSS -->
+    <link rel="stylesheet" href="css/app-light.css" id="lightTheme">
+    <link rel="stylesheet" href="css/app-dark.css" id="darkTheme" disabled>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f9fa;
+        }
+        .login-card {
+            padding: 1.5rem;
+            border-radius: .75rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+        .login-card .form-control:focus {
+            box-shadow: none;
+            border-color: #A2C0FC;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+            <div class="login-card">
+                <h3 class="text-center mb-2 mt-2">Masuk ke Akun</h3>
+                <p class="text-center text-muted mb-4">Silakan masukkan username, kata sandi, dan semester Anda untuk melanjutkan</p>
+                <form id="loginForm" onsubmit="return validateForm(event)">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" id="username" placeholder="Enter username" autocomplete="off">
+                        <div id="usernameError" class="text-danger"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" placeholder="Password" autocomplete="off">
+                        <div id="passwordError" class="text-danger"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="semester">Semester</label>
+                        <select class="form-control" id="semester" style="padding-right: 2.5rem;">
+                            <option value="">Select semester</option>
+                            <option value="1">Semester 1</option>
+                            <option value="2">Semester 2</option>
+                        </select>
+                        <div id="semesterError" class="text-danger"></div>
+                    </div>
+                    <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="remember">
+                        <label class="form-check-label" for="remember">Ingat Password</label>
+                        <a href="lupapassword.html" class="float-right">Lupa Password?</a>
+                    </div>                      
+                    <button type="submit" class="btn btn-primary btn-block mb-4 mt-4">Masuk</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function validateForm(event) {
+        event.preventDefault(); 
+
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+        var semester = document.getElementById('semester').value;
+        var isValid = true;
+
+        document.getElementById('usernameError').innerHTML = '';
+        document.getElementById('passwordError').innerHTML = '';
+        document.getElementById('semesterError').innerHTML = '';
+
+        if (username === '') {
+            document.getElementById('usernameError').innerHTML = 'Username harus diisi';
+            isValid = false;
+        }
+
+        if (password === '') {
+            document.getElementById('passwordError').innerHTML = 'Password harus diisi';
+            isValid = false;
+        }
+
+        if (!semester) {
+            document.getElementById('semesterError').innerHTML = 'Semester harus dipilih';
+            isValid = false;
+        }
+
+        if (isValid) {
+            window.location.href = 'dashboard.html'; 
+        }
+
+        return false;
+    }
+</script>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/simplebar.min.js"></script>
+<script src='js/daterangepicker.js'></script>
+<script src='js/jquery.stickOnScroll.js'></script>
+<script src="js/tinycolor-min.js"></script>
+<script src="js/config.js"></script>
+<script src="js/apps.js"></script>
+</body>
+</html>

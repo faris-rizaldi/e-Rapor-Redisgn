@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="favicon.ico">
+  <title>Verifikasi Code</title>
+  <!-- Simple bar CSS -->
+  <link rel="stylesheet" href="css/simplebar.css">
+  <!-- Fonts CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+  <!-- Icons CSS -->
+  <link rel="stylesheet" href="css/feather.css">
+  <!-- Date Range Picker CSS -->
+  <link rel="stylesheet" href="css/daterangepicker.css">
+  <!-- App CSS -->
+  <link rel="stylesheet" href="css/app-light.css" id="lightTheme">
+  <link rel="stylesheet" href="css/app-dark.css" id="darkTheme" disabled>
+  <!-- SweetAlert2 CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+  <style>
+    .reset-password-container {
+      max-width: 350px;
+      text-align: center;
+    }
+    .logo {
+      margin-bottom: 20px;
+    }
+    .logo img {
+      max-width: 50px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <div class="reset-password-container">
+      <div class="logo">
+        <img src="assets/images/tut-wuri.png" alt="Logo">
+      </div>
+      <h2>Memeriksa Code Verifikasi</h2>
+      <p>Kode otentikasi telah dikirim ke email Anda.</p>
+      <form id="verification-form">
+        <div class="form-group">
+          <input type="text" class="form-control text-center" id="code" placeholder="Masukkan kode" autocomplete="off">
+          <div class="invalid-feedback" id="codeError">Kode verifikasi salah. Silakan coba lagi.</div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Verifikasi</button>
+      </form>
+      <footer class="mt-4">
+        <p>© 2024</p>
+      </footer>
+    </div>
+  </div>
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/simplebar.min.js"></script>
+<script src='js/daterangepicker.js'></script>
+<script src='js/jquery.stickOnScroll.js'></script>
+<script src="js/tinycolor-min.js"></script>
+<script src="js/config.js"></script>
+<script src="js/apps.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+<script>
+  document.getElementById('verification-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    var codeInput = document.getElementById('code');
+    var codeError = document.getElementById('codeError');
+    var codeValue = codeInput.value.trim();
+    var correctCode = "2024"; // The correct verification code
+
+    if (!codeValue) {
+      codeInput.classList.add('is-invalid');
+      codeError.textContent = 'Kode verifikasi tidak boleh kosong.';
+      codeError.style.display = 'block';
+    } else if (codeValue !== correctCode) {
+      codeInput.classList.add('is-invalid');
+      codeError.textContent = 'Kode verifikasi salah. Silakan coba lagi.';
+      codeError.style.display = 'block';
+    } else {
+      codeInput.classList.remove('is-invalid');
+      codeError.style.display = 'none';
+      // Directly redirect to change-password.html upon successful verification
+      window.location.href = 'ubah-password.html';
+    }
+  });
+</script>
+
+</body>
+</html>
