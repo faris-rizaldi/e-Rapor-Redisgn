@@ -149,107 +149,102 @@
       </aside>
       <main role="main" class="main-content">
         <div class="container-fluid">
-          <div class="row justify-content-center">
-            <div class="col-11">
-              <h2 class="h3 mb-4 page-title">Pengaturan</h2>
-              <div class="my-4">
-                <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
-                  <li class="nav-item">
-                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="profile.html" role="tab" aria-controls="home" aria-selected="true">Profile</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="" role="tab" aria-controls="profile" aria-selected="false">Edit</a>
-                  </li>
-
-                </ul>
-                <form>
-                  <div class="row mt-5 align-items-center">
-                    <div class="col-md-3 text-center mb-5">
-                      <div class="avatar avatar-xl">
-                        <img src="./assets/avatars/face-7.jpg" alt="..." class="avatar-img rounded-circle">
-                      </div>
+            <div class="row justify-content-center">
+                <div class="col-11">
+                <div class="my-4">
+                    <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="profile.html" role="tab" aria-controls="home" aria-selected="true">Profile</a>
+                    </li>
+                    </ul>
+                    <form>
+                    <div class="row mt-5 align-items-center">
+                        <div class="col-md-3 text-center mb-5">
+                        <div class="avatar avatar-xl">
+                            <img src="assets/avatars/face-7.jpg" alt="..." class="avatar-img rounded-circle">
+                        </div>
+                        </div>
+                        <div class="col">
+                        <div class="row align-items-center">
+                        <div class="row mb-2">
+                            <div class="col12-md-7">
+                                <h4 class="mb-1">Nusroh Latifah</h4>
+                                <p class="small mb-3"><span class="badge badge-dark">Bantul, Yogyakarta</span></p>
+                            </div>
+                        </div>
+                        </div>
+                        </div>
                     </div>
-                    <div class="col">
-                      <div class="row align-items-center">
-                      <div class="row mb-2">
-                        <div class="col12-md-7">
-                            <h4 class="mb-1">Nusroh Latifah</h4>
-                            <p class="small mb-3"><span class="badge badge-dark">Bantul, Yogyakarta</span></p>
-                          </div>
-                       </div>
-                      </div>
+                    <hr class="my-2">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                        <label for="nama">Nama</label>
+                        <input type="text" id="nama" class="form-control" value="Nusroh Latifah">
+                        </div>
+                        <div class="form-group col-md-6">
+                        <label for="gelardepan">Gelar Depan</label>
+                        <input type="text" id="gelardepan" class="form-control" value="">
+                        </div>
+                        <div class="form-group col-md-6">
+                        <label for="gelarbelakang">Gelar Belakang</label>
+                        <input type="text" id="gelarbelakang" class="form-control" value="S. Pd, M. Pd">
+                        </div>
+                        <div class="form-group col-md-6">
+                        <label for="l/p">L/P</label>
+                        <input type="text" id="l/p" class="form-control" value="Perempuan">
+                        </div>
+                        <div class="form-group col-md-6">
+                        <label for="nip">NIP</label>
+                        <input type="text" id="nip" class="form-control" value="1968378723767342">
+                        </div>
+                        <div class="form-group col-md-6">
+                        <label for="nuptk">NUPTK</label>
+                        <input type="text" id="nuptk" class="form-control" value="4467823632914">
+                        </div>
                     </div>
-                  </div>
-                  <hr class="my-2">
-                  <div class="form-row">
-                    <div class="form-group col-md-6">
-                      <label for="nama">Nama</label>
-                      <input type="text" id="nama" class="form-control" placeholder="Nusroh Latifah">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" value="nusrohlatifah@gmail.com">
                     </div>
-                    <div class="form-group col-md-6">
-                      <label for="gelardepan">Gelar Depan</label>
-                      <input type="text" id="gelardepan" class="form-control" placeholder="">
+                    <div class="form-group">
+                        <label for="alamat">Alamat</label>
+                        <input type="text" class="form-control" id="alamat" value="Kalipakel. Donotirto, Kretek, Bantul, Yogyakarta">
                     </div>
-                    <div class="form-group col-md-6">
-                      <label for="gelarbelakang">Gelar Belakang</label>
-                      <input type="text" id="gelarbelakang" class="form-control" placeholder="S. Pd, M. Pd">
+                    
+                    <hr class="my-4">
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="inputOldPassword">Kata Sandi Lama</label>
+                                <input type="password" class="form-control" id="inputOldPassword">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputNewPassword">Kata Sandi Baru</label>
+                                <input type="password" class="form-control" id="inputNewPassword">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputConfirmPassword">Ulangi Kata Sandi Baru</label>
+                                <input type="password" class="form-control" id="inputConfirmPassword">
+                            </div>
+                            <button type="button" class="btn btn-primary" onclick="validatePassword()">Simpan</button>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="mb-2">Persyaratan kata sandi</p>
+                            <p class="small text-muted mb-2"> Untuk membuat kata sandi baru, Anda harus memenuhi semua persyaratan berikut: </p>
+                            <ul class="small text-muted pl-4 mb-0">
+                                <li> Minimal 8 karakter </li>
+                                <li> Setidaknya satu karakter khusus </li>
+                                <li> Setidaknya satu nomor </li>
+                                <li> Tidak boleh sama dengan password sebelumnya </li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="form-group col-md-6">
-                      <label for="l/p">L/P</label>
-                      <input type="text" id="l/p" class="form-control" placeholder="Perempuan">
-                    </div>
-                    <div class="form-group col-md-6">
-                      <label for="nip">NIP</label>
-                      <input type="text" id="nip" class="form-control" placeholder="1968378723767342">
-                    </div>
-                    <div class="form-group col-md-6">
-                      <label for="nuptk">NUPTK</label>
-                      <input type="text" id="nuptk" class="form-control" placeholder="4467823632914">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email" placeholder="nusrohlatifah@gmail.com">
-                  </div>
-                  <div class="form-group">
-                    <label for="alamat">Alamat</label>
-                    <input type="text" class="form-control" id="alamat" placeholder="Kalipakel. Donotirto, Kretek, Bantul, Yogyakarta">
-                  </div>
-                  
-                  <hr class="my-4">
-                  <div class="row mb-4">
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label for="inputPassword4">Kata Sandi Lama</label>
-                        <input type="password" class="form-control" id="inputPassword5">
-                      </div>
-                      <div class="form-group">
-                        <label for="inputPassword5">Kata Sandi Baru</label>
-                        <input type="password" class="form-control" id="inputPassword5">
-                      </div>
-                      <div class="form-group">
-                        <label for="inputPassword6">Ulangi Kata Sandi Baru</label>
-                        <input type="password" class="form-control" id="inputPassword6">
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <p class="mb-2">Persyaratan kata sandi</p>
-                      <p class="small text-muted mb-2"> Untuk membuat kata sandi baru, Anda harus memenuhi semua persyaratan berikut: </p>
-                      <ul class="small text-muted pl-4 mb-0">
-                        <li> Minimal 8 karakter </li>
-                        <li>Setidaknya satu karakter khusus</li>
-                        <li>Setidaknya satu nomors</li>
-                        <li>Tidak boleh sama dengan password sebelumnya</li>
-                      </ul>
-                    </div>
-                  </div>
-                  <button type="submit" class="btn btn-primary">Simpan</button>
-                </form>
-              </div> <!-- /.card-body -->
-            </div> <!-- /.col-12 -->
-          </div> <!-- .row -->
+                    </form>
+                </div> <!-- /.card-body -->
+                </div> <!-- /.col-12 -->
+            </div> <!-- .row -->
         </div> <!-- .container-fluid -->
-      </main> <!-- main -->
+    </main> <!-- main -->
     </div> <!-- .wrapper -->
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.min.js"></script>
@@ -261,6 +256,7 @@
     <script src="js/tinycolor-min.js"></script>
     <script src="js/config.js"></script>
     <script src="js/apps.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-56159088-1"></script>
     <script>
@@ -272,6 +268,57 @@
       }
       gtag('js', new Date());
       gtag('config', 'UA-56159088-1');
-    </script>  
+    </script> 
+
+<script>
+  function validatePassword() {
+      var oldPassword = document.getElementById("inputOldPassword").value;
+      var newPassword = document.getElementById("inputNewPassword").value;
+      var confirmPassword = document.getElementById("inputConfirmPassword").value;
+      
+      var errorMessage = [];
+      
+      if (newPassword.length < 8) {
+          errorMessage.push("Kata sandi baru harus minimal 8 karakter.");
+      }
+      
+      if (!/[!@#$%^&*(),.?":{}|<>]/g.test(newPassword)) {
+          errorMessage.push("Kata sandi baru harus mengandung setidaknya satu karakter khusus.");
+      }
+      
+      if (!/\d/.test(newPassword)) {
+          errorMessage.push("Kata sandi baru harus mengandung setidaknya satu nomor.");
+      }
+      
+      if (newPassword === oldPassword) {
+          errorMessage.push("Kata sandi baru tidak boleh sama dengan kata sandi lama.");
+      }
+      
+      if (newPassword !== confirmPassword) {
+          errorMessage.push("Kata sandi baru dan konfirmasi kata sandi baru tidak cocok.");
+      }
+      
+      if (errorMessage.length > 0) {
+          Swal.fire({
+              icon: 'error',
+              title: 'Kesalahan',
+              html: errorMessage.join('<br>'),
+              customClass: {
+                  confirmButton: 'btn btn-primary'
+              }
+          });
+      } else {
+          Swal.fire({
+              icon: 'success',
+              title: 'Berhasil',
+              text: 'Kata sandi berhasil diubah!',
+              customClass: {
+                  confirmButton: 'btn btn-primary'
+              }
+          });
+          // Lakukan aksi lain seperti mengirim data ke server
+      }
+  }
+  </script>
   </body>
 </html>
