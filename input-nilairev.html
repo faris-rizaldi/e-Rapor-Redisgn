@@ -622,7 +622,29 @@
           });
       });
     </script>
-        
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Array of specific input field IDs to apply the behavior
+            const inputIds = ["kktpSumantif1", "kktpSumantif2", "kktpSumantif3", "kktpSumantif4", "kktpSumantif5", "kktpSumantif6"];
+
+            inputIds.forEach(function(id) {
+                const inputField = document.getElementById(id);
+
+                // Add an event listener for input events
+                inputField.addEventListener('input', function () {
+                    // Remove any non-digit characters
+                    this.value = this.value.replace(/[^0-9]/g, '');
+                    
+                    // Convert the value to an integer and check if it's outside the range 1-9
+                    if (parseInt(this.value) < 1 || parseInt(this.value) > 9) {
+                        this.value = 0; // Set the value to 0 if it's out of range
+                    }
+                });
+            });
+        });
+    </script>
+
         <script>
           document.getElementById('myForm').addEventListener('submit', function(event) {
               let inputs = document.querySelectorAll('.form-control');
