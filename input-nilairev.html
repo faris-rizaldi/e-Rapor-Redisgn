@@ -48,15 +48,7 @@
       ::-webkit-scrollbar-thumb:hover {
           background: #999; 
       }
-      .column-width {
-        width: 80px;
-      }
-      .column-table {
-        width: 120px;
-      }
-      .form-control {
-        font-size: 12px;
-      }
+      
             #kktpSumantif1::placeholder,
             #kktpSumantif2::placeholder,
             #kktpSumantif3::placeholder,
@@ -173,7 +165,7 @@
                   <h2 class="page-title">Input Nilai Akhir Siswa</h2>
                   <div class="card shadow mb-4">
                     <div class="card-body">
-                      <div class="container">
+        
                             <div class="form-group">
                                 <label for="kelas">Pilih Kelas</label>
                                 <select class="form-control" id="kelas" name="kelas"> 
@@ -200,7 +192,7 @@
                                     <option value="2">2</option>
                                 </select>
                             </div>
-                    </div>
+                   
 
                     <div class="d-flex justify-content-end align-items-center mb-3 mt-4">
                       <a href="lihat-edit-deskripsi.html" class="btn btn-sm btn-primary">
@@ -209,339 +201,54 @@
                   </div>
                   <form id="myForm" action="">
                     <div class="table-responsive mb-4">
-                    <table class="table table-bordered" id="formFeature1">
-                        <thead>
-                            <tr>
-                                <th rowspan="3" scope="col" class="text-center text-black-50">No</th>
-                                <th rowspan="3" scope="col" class="text-center text-black-50" style="width: 200px;">Nama Siswa</th>
-                                <th colspan="6" scope="col" class="text-center text-black-50">Sumantif</th>
-                                <th colspan="1" rowspan="2" scope="col" class="text-center text-black-50" style="width: 50px;">Sum Sumantif</th>
-                                <th colspan="1" rowspan="2" scope="col" class="text-center text-black-50 column-table">ATS</th>
-                                <th colspan="1" rowspan="2" scope="col" class="text-center text-black-50 column-table">AAS</th>
-                                <th rowspan="3" scope="col" class="text-center text-black-50 column-table">Nilai Rapor</th>
-                            </tr>
-                            <tr>
-                                <th class="text-center text-black-50 column-table" scope="col">1</th>
-                                <th class="text-center text-black-50 column-table" scope="col">2</th>
-                                <th class="text-center text-black-50 column-table" scope="col">3</th>
-                                <th class="text-center text-black-50 column-table" scope="col">4</th>
-                                <th class="text-center text-black-50 column-table" scope="col">5</th>
-                                <th class="text-center text-black-50 column-table" scope="col">6</th>
-                            <tr>
-                            <th class="text-center text-black-50 column-width">
-                                    <input type="text" class="form-control" name="kktpSumantif1" id="kktpSumantif1" placeholder="KKTP" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </th>
-                                <th class="text-center text-black-50 column-width">
-                                    <input type="text" class="form-control" name="kktpSumantif2" id="kktpSumantif2" placeholder="KKTP" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </th>
-                                <th class="text-center text-black-50 column-width">
-                                    <input type="text" class="form-control" name="kktpSumantif3" id="kktpSumantif3" placeholder="KKTP" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </th>
-                                <th class="text-center text-black-50 column-width">
-                                    <input type="text" class="form-control" name="kktpSumantif4" id="kktpSumantif4" placeholder="KKTP" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </th>
-                                <th class="text-center text-black-50 column-width">
-                                    <input type="text" class="form-control" name="kktpSumantif5" id="kktpSumantif5" placeholder="KKTP" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </th>
-                                <th class="text-center text-black-50 column-width">
-                                    <input type="text" class="form-control" name="kktpSumantif6" id="kktpSumantif6" placeholder="KKTP" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </th>
-                                <th class="text-center text-black-50 column-width">
-                                    <input type="text" class="form-control" name="average_sumantif" id="inputBobotAvrageSumantif" placeholder="Bobot" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </th>
-                                <th class="text-center text-black-50 column-width">
-                                    <input type="text" class="form-control" name="ats" id="inputBobotATS" placeholder="Bobot" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </th>
-                                <th class="text-center text-black-50 column-width">
-                                    <input type="text" class="form-control" name="aas" id="inputBobotAAS" placeholder="Bobot" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Ahmad Fauzan</td>
-                                <td><input type="text" class="form-control" name="sumantif1" id="inputSumantif1" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="sumantif2" id="inputSumantif2" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="sumantif3" id="inputSumantif3" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="sumantif4" id="inputSumantif4" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="sumantif5" id="inputSumantif5" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="sumantif6" id="inputSumantif6" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="average_sumantif" id="inputAverageSumantif" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="ats" id="inputAts" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="aas" id="inputAas" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="nilai_rapor" id="inputNilaiRapor" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Andi Pratama</td>
-                                <td><input type="text" class="form-control" name="sumantif1" id="inputSumantif1" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="sumantif2" id="inputSumantif2" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="sumantif3" id="inputSumantif3" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="sumantif4" id="inputSumantif4" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="sumantif5" id="inputSumantif5" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="sumantif6" id="inputSumantif6" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="average_sumantif" id="inputAverageSumantif" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="ats" id="inputAts" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="aas" id="inputAas" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="nilai_rapor" id="inputNilaiRapor" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Budi Santoso</td>
-                                <td><input type="text" class="form-control" name="sumantif1" id="inputSumantif1" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="sumantif2" id="inputSumantif2" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="sumantif3" id="inputSumantif3" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="sumantif4" id="inputSumantif4" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="sumantif5" id="inputSumantif5" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="sumantif6" id="inputSumantif6" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="average_sumantif" id="inputAverageSumantif" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="ats" id="inputAts" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="aas" id="inputAas" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="nilai_rapor" id="inputNilaiRapor" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">4</th>
-                                <td>Dewi Sartika</td>
-                                <td><input type="text" class="form-control" name="sumantif1" id="inputSumantif1" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="sumantif2" id="inputSumantif2" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="sumantif3" id="inputSumantif3" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="sumantif4" id="inputSumantif4" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="sumantif5" id="inputSumantif5" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="sumantif6" id="inputSumantif6" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="average_sumantif" id="inputAverageSumantif" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="ats" id="inputAts" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="aas" id="inputAas" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="nilai_rapor" id="inputNilaiRapor" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">5</th>
-                                <td>Fitriani Rahma</td>
-                                <td><input type="text" class="form-control" name="sumantif1" id="inputSumantif1" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="sumantif2" id="inputSumantif2" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="sumantif3" id="inputSumantif3" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="sumantif4" id="inputSumantif4" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="sumantif5" id="inputSumantif5" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="sumantif6" id="inputSumantif6" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="average_sumantif" id="inputAverageSumantif" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="ats" id="inputAts" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="aas" id="inputAas" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="nilai_rapor" id="inputNilaiRapor" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">6</th>
-                                <td>Ridwan Kamil</td>
-                                <td><input type="text" class="form-control" name="sumantif1" id="inputSumantif1" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="sumantif2" id="inputSumantif2" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="sumantif3" id="inputSumantif3" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="sumantif4" id="inputSumantif4" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="sumantif5" id="inputSumantif5" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="sumantif6" id="inputSumantif6" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="average_sumantif" id="inputAverageSumantif" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="ats" id="inputAts" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="aas" id="inputAas" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="nilai_rapor" id="inputNilaiRapor" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">7</th>
-                                <td>Siti Aminah</td>
-                                <td><input type="text" class="form-control" name="sumantif1" id="inputSumantif1" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="sumantif2" id="inputSumantif2" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="sumantif3" id="inputSumantif3" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="sumantif4" id="inputSumantif4" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="sumantif5" id="inputSumantif5" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="sumantif6" id="inputSumantif6" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="average_sumantif" id="inputAverageSumantif" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="ats" id="inputAts" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="aas" id="inputAas" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="nilai_rapor" id="inputNilaiRapor" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">8</th>
-                                <td>Yuni Kartika</td>
-                                <td><input type="text" class="form-control" name="sumantif1" id="inputSumantif1" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="sumantif2" id="inputSumantif2" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="sumantif3" id="inputSumantif3" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="sumantif4" id="inputSumantif4" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="sumantif5" id="inputSumantif5" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="sumantif6" id="inputSumantif6" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="average_sumantif" id="inputAverageSumantif" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="ats" id="inputAts" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="aas" id="inputAas" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                                <td><input type="text" class="form-control" name="nilai_rapor" id="inputNilaiRapor" autocomplete="off">
-                                    <div class="invalid-feedback text-danger"></div>
-                                </td>
-                            </tr>
-                        </tbody>
-
-                    </table>                                   
+                        <table class="table table-bordered" id="formFeature1">
+                            <thead>
+                                <tr>
+                                    <th rowspan="3" scope="col" class="text-center text-black-50">No</th>
+                                    <th rowspan="3" scope="col" class="text-center text-black-50" style="min-width: 200px;">Nama Siswa</th>
+                                    <th colspan="6" scope="col" class="text-center text-black-50">Sumantif</th>
+                                    <th colspan="1" rowspan="2" scope="col" class="text-center text-black-50" style="min-width: 50px;">Sum Sumantif</th>
+                                    <th colspan="1" rowspan="2" scope="col" class="text-center text-black-50">ATS</th>
+                                    <th colspan="1" rowspan="2" scope="col" class="text-center text-black-50">AAS</th>
+                                    <th rowspan="3" scope="col" class="text-center text-black-50">Nilai Rapor</th>
+                                </tr>
+                                <tr>
+                                    <th class="text-center text-black-50">1</th>
+                                    <th class="text-center text-black-50">2</th>
+                                    <th class="text-center text-black-50">3</th>
+                                    <th class="text-center text-black-50">4</th>
+                                    <th class="text-center text-black-50">5</th>
+                                    <th class="text-center text-black-50">6</th>
+                                </tr>
+                                <tr>
+                                    <th><input type="text" class="form-control" placeholder="KKTP" autocomplete="off"></th>
+                                    <th><input type="text" class="form-control" placeholder="KKTP" autocomplete="off"></th>
+                                    <th><input type="text" class="form-control" placeholder="KKTP" autocomplete="off"></th>
+                                    <th><input type="text" class="form-control" placeholder="KKTP" autocomplete="off"></th>
+                                    <th><input type="text" class="form-control" placeholder="KKTP" autocomplete="off"></th>
+                                    <th><input type="text" class="form-control" placeholder="KKTP" autocomplete="off"></th>
+                                    <th><input type="text" class="form-control" placeholder="Bobot" autocomplete="off"></th>
+                                    <th><input type="text" class="form-control" placeholder="Bobot" autocomplete="off"></th>
+                                    <th><input type="text" class="form-control" placeholder="Bobot" autocomplete="off"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Ahmad Fauzan</td>
+                                    <td><input type="text" class="form-control" autocomplete="off"></td>
+                                    <td><input type="text" class="form-control" autocomplete="off"></td>
+                                    <td><input type="text" class="form-control" autocomplete="off"></td>
+                                    <td><input type="text" class="form-control" autocomplete="off"></td>
+                                    <td><input type="text" class="form-control" autocomplete="off"></td>
+                                    <td><input type="text" class="form-control" autocomplete="off"></td>
+                                    <td><input type="text" class="form-control" autocomplete="off"></td>
+                                    <td><input type="text" class="form-control" autocomplete="off"></td>
+                                    <td><input type="text" class="form-control" autocomplete="off"></td>
+                                    <td><input type="text" class="form-control" autocomplete="off"></td>
+                                </tr>
+                            </tbody>
+                        </table>                                   
                         <div class="d-flex justify-content-end align-items-center mb-3 mt-4">
                         <button id="submitButton" type="submit" class="btn btn-sm btn-primary" onclick="submitForm()">
                             <span class="fe fe-arrow-right fe-16 mr-2"></span>Kirim
