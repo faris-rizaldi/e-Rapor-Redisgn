@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <link rel="icon" href="favicon.ico">
+  <link rel="icon" href="assets/images/favicon.ico">
   <title>Verifikasi Code</title>
   <!-- Simple bar CSS -->
   <link rel="stylesheet" href="css/simplebar.css">
@@ -22,7 +22,8 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
   <style>
     .reset-password-container {
-      max-width: 350px;
+      max-width: 400px;
+      margin: auto;
       text-align: center;
     }
     .logo {
@@ -30,6 +31,14 @@
     }
     .logo img {
       max-width: 50px;
+    }
+    .otp-input {
+      width: 60px;
+      height: 60px;
+      font-size: 24px;
+      text-align: center;
+      margin: 5px;
+      border-radius: 5px;
     }
   </style>
 </head>
@@ -40,12 +49,17 @@
       <div class="logo">
         <img src="assets/images/tut-wuri.png" alt="Logo">
       </div>
-      <h2>Memeriksa Code Verifikasi</h2>
-      <p>Kode otentikasi telah dikirim ke email Anda.</p>
+      <h2>Verifikasi OTP</h2>
+      <p>Kode OTP telah dikirim ke email Anda.</p>
       <form id="verification-form">
-        <div class="form-group">
-          <input type="text" class="form-control text-center" id="code" placeholder="Masukkan kode" autocomplete="off">
-          <div class="invalid-feedback" id="codeError">Kode verifikasi salah. Silakan coba lagi.</div>
+        <div class="form-group mb-4">
+          <div class="d-flex justify-content-center">
+            <input type="text" class="form-control otp-input" maxlength="1" id="digit-1" autocomplete="off">
+            <input type="text" class="form-control otp-input" maxlength="1" id="digit-2" autocomplete="off">
+            <input type="text" class="form-control otp-input" maxlength="1" id="digit-3" autocomplete="off">
+            <input type="text" class="form-control otp-input" maxlength="1" id="digit-4" autocomplete="off">
+          </div>
+          <div class="invalid-feedback text-center" id="codeError">Kode verifikasi salah. Silakan coba lagi.</div>
         </div>
         <button type="submit" class="btn btn-primary btn-block">Verifikasi</button>
       </form>
@@ -68,26 +82,34 @@
 <script src="js/apps.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
 <script>
+  // Auto move to next input field
+  const inputs = document.querySelectorAll('.otp-input');
+  inputs.forEach((input, index) => {
+    input.addEventListener('input', () => {
+      if (input.value.length === 1 && index < inputs.length - 1) {
+        inputs[index + 1].focus();
+      }
+    });
+  });
+
+  // Handle form submission
   document.getElementById('verification-form').addEventListener('submit', function(event) {
     event.preventDefault();
-    var codeInput = document.getElementById('code');
-    var codeError = document.getElementById('codeError');
-    var codeValue = codeInput.value.trim();
-    var correctCode = "2024"; // The correct verification code
+    
+    let otpCode = '';
+    inputs.forEach(input => {
+      otpCode += input.value;
+    });
 
-    if (!codeValue) {
-      codeInput.classList.add('is-invalid');
-      codeError.textContent = 'Kode verifikasi tidak boleh kosong.';
+    const correctCode = "2024"; // Replace with your actual verification logic
+    const codeError = document.getElementById('codeError');
+
+    if (otpCode.length !== 4 || otpCode !== correctCode) {
       codeError.style.display = 'block';
-    } else if (codeValue !== correctCode) {
-      codeInput.classList.add('is-invalid');
-      codeError.textContent = 'Kode verifikasi salah. Silakan coba lagi.';
-      codeError.style.display = 'block';
+      inputs.forEach(input => input.classList.add('is-invalid'));
     } else {
-      codeInput.classList.remove('is-invalid');
       codeError.style.display = 'none';
-      // Directly redirect to change-password.html upon successful verification
-      window.location.href = 'ubah-password.html';
+      window.location.href = 'ubah-password.html'; // Redirect after successful verification
     }
   });
 </script>
