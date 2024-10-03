@@ -56,15 +56,6 @@
                         <input type="password" class="form-control" id="password" placeholder="Password" autocomplete="off">
                         <div id="passwordError" class="text-danger"></div>
                     </div>
-                    <div class="form-group">
-                        <label for="semester">Semester</label>
-                        <select class="form-control" id="semester" style="padding-right: 2.5rem;">
-                            <option value="">Select semester</option>
-                            <option value="1">Semester 1</option>
-                            <option value="2">Semester 2</option>
-                        </select>
-                        <div id="semesterError" class="text-danger"></div>
-                    </div>
                     <div class="form-group form-check">
                         <input type="checkbox" class="form-check-input" id="remember">
                         <label class="form-check-label" for="remember">Ingat Password</label>
@@ -96,11 +87,6 @@
 
         if (password === '') {
             document.getElementById('passwordError').innerHTML = 'Password harus diisi';
-            isValid = false;
-        }
-
-        if (!semester) {
-            document.getElementById('semesterError').innerHTML = 'Semester harus dipilih';
             isValid = false;
         }
 
