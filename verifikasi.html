@@ -95,24 +95,11 @@
 
   // Handle form submission
   document.getElementById('verification-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-    
-    let otpCode = '';
-    inputs.forEach(input => {
-      otpCode += input.value;
-    });
-
-    const correctCode = "2024"; // Replace with your actual verification logic
-    const codeError = document.getElementById('codeError');
-
-    if (otpCode.length !== 4 || otpCode !== correctCode) {
-      codeError.style.display = 'block';
-      inputs.forEach(input => input.classList.add('is-invalid'));
-    } else {
-      codeError.style.display = 'none';
-      window.location.href = 'ubah-password.html'; // Redirect after successful verification
-    }
-  });
+  event.preventDefault();
+  
+  // Langsung arahkan ke halaman ubah-password tanpa validasi
+  window.location.href = 'ubah-password.html';
+});
 </script>
 
 </body>
