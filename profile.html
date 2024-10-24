@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="assets/images/favicon.ico">
     <title>Pengaturan Profil</title>
     <!-- Simple bar CSS -->
     <link rel="stylesheet" href="css/simplebar.css">
@@ -143,16 +143,21 @@
                     </ul>
                     <form>
                     <div class="row mt-5 align-items-center">
-                        <div class="col-md-3 text-center mb-5">
-                        <div class="avatar avatar-xl">
-                            <img src="assets/avatars/face-7.jpg" alt="..." class="avatar-img rounded-circle">
+                        <div class="col-md-3 text-center mb-5 position-relative">
+                            <div class="avatar avatar-xl position-relative d-inline-block">
+                                <img id="profile-pic" src="assets/avatars/face-7.jpg" alt="Profile Picture" class="avatar-img rounded-circle" style="width:150px; height:150px;">
+                                <button type="button" class="btn btn-light p-1 position-absolute" style="bottom: 5px; right: 5px; border-radius: 50%;" onclick="document.getElementById('upload-image').click()">
+                                    <i class="fe fe-edit"></i>
+                                </button>
+                            </div>
+                            <input type="file" id="upload-image" class="d-none" accept="image/*" onchange="previewImage(event)">
                         </div>
-                        </div>
+                        
                         <div class="col">
                         <div class="row align-items-center">
                         <div class="row mb-2">
                             <div class="col12-md-7">
-                                <h4 class="mb-1">User Name</h4>
+                                <h4 class="mb-1">Name</h4>
                                 <p class="small mb-3"><span class="badge badge-dark">Bantul, Yogyakarta</span></p>
                             </div>
                         </div>
@@ -163,7 +168,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                         <label for="nama">Nama</label>
-                        <input type="text" id="nama" class="form-control" value="User Name">
+                        <input type="text" id="nama" class="form-control" value="Name">
                         </div>
                         <div class="form-group col-md-6">
                         <label for="gelardepan">Gelar Depan</label>
@@ -192,37 +197,10 @@
                     </div>
                     <div class="form-group">
                         <label for="alamat">Alamat</label>
-                        <input type="text" class="form-control" id="alamat" value="Kalipakel. Donotirto, Kretek, Bantul, Yogyakarta">
+                        <textarea class="form-control" id="alamat" rows="3">Kalipakel. Donotirto, Kretek, Bantul, Yogyakarta</textarea>
                     </div>
-                    
-                    <hr class="my-4">
-                    <div class="row mb-4">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="inputOldPassword">Kata Sandi Lama</label>
-                                <input type="password" class="form-control" id="inputOldPassword">
-                            </div>
-                            <div class="form-group">
-                                <label for="inputNewPassword">Kata Sandi Baru</label>
-                                <input type="password" class="form-control" id="inputNewPassword">
-                            </div>
-                            <div class="form-group">
-                                <label for="inputConfirmPassword">Ulangi Kata Sandi Baru</label>
-                                <input type="password" class="form-control" id="inputConfirmPassword">
-                            </div>
-                            <button type="button" class="btn btn-primary" onclick="validatePassword()">Simpan</button>
-                        </div>
-                        <div class="col-md-6">
-                            <p class="mb-2">Persyaratan kata sandi</p>
-                            <p class="small text-muted mb-2"> Untuk membuat kata sandi baru, Anda harus memenuhi semua persyaratan berikut: </p>
-                            <ul class="small text-muted pl-4 mb-0">
-                                <li> Minimal 8 karakter </li>
-                                <li> Setidaknya satu karakter khusus </li>
-                                <li> Setidaknya satu nomor </li>
-                                <li> Tidak boleh sama dengan password sebelumnya </li>
-                            </ul>
-                        </div>
-                    </div>
+                
+                    <button type="button" class="btn btn-primary mt-3 float-right">Simpan</button>
                     </form>
                 </div> <!-- /.card-body -->
                 </div> <!-- /.col-12 -->
@@ -253,56 +231,15 @@
       gtag('js', new Date());
       gtag('config', 'UA-56159088-1');
     </script> 
-
-<script>
-  function validatePassword() {
-      var oldPassword = document.getElementById("inputOldPassword").value;
-      var newPassword = document.getElementById("inputNewPassword").value;
-      var confirmPassword = document.getElementById("inputConfirmPassword").value;
-      
-      var errorMessage = [];
-      
-      if (newPassword.length < 8) {
-          errorMessage.push("Kata sandi baru harus minimal 8 karakter.");
-      }
-      
-      if (!/[!@#$%^&*(),.?":{}|<>]/g.test(newPassword)) {
-          errorMessage.push("Kata sandi baru harus mengandung setidaknya satu karakter khusus.");
-      }
-      
-      if (!/\d/.test(newPassword)) {
-          errorMessage.push("Kata sandi baru harus mengandung setidaknya satu nomor.");
-      }
-      
-      if (newPassword === oldPassword) {
-          errorMessage.push("Kata sandi baru tidak boleh sama dengan kata sandi lama.");
-      }
-      
-      if (newPassword !== confirmPassword) {
-          errorMessage.push("Kata sandi baru dan konfirmasi kata sandi baru tidak cocok.");
-      }
-      
-      if (errorMessage.length > 0) {
-          Swal.fire({
-              icon: 'error',
-              title: 'Kesalahan',
-              html: errorMessage.join('<br>'),
-              customClass: {
-                  confirmButton: 'btn btn-primary'
-              }
-          });
-      } else {
-          Swal.fire({
-              icon: 'success',
-              title: 'Berhasil',
-              text: 'Kata sandi berhasil diubah!',
-              customClass: {
-                  confirmButton: 'btn btn-primary'
-              }
-          });
-          // Lakukan aksi lain seperti mengirim data ke server
-      }
-  }
-  </script>
+    <script>
+        function previewImage(event) {
+            const reader = new FileReader();
+            reader.onload = function() {
+                const output = document.getElementById('profile-pic');
+                output.src = reader.result;
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        }
+        </script>
   </body>
 </html>
